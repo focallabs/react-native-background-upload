@@ -1,0 +1,60 @@
+{
+  "_args": [
+    [
+      "react-native-background-upload@5.1.0",
+      "/Users/duongtung/Remote-Working/FocalLab/WTV_UGC/wtv-ugc-app-new"
+    ]
+  ],
+  "_from": "react-native-background-upload@5.1.0",
+  "_id": "react-native-background-upload@5.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-3HgWUO1V1vk1At+R6jUz7nxmRJMvpsRukimI1qG06aSIYpcS10dG3d/o/XVeyNS+k8OuHKIjzBXPw2ZrmCWkIA==",
+  "_location": "/react-native-background-upload",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "react-native-background-upload@5.1.0",
+    "name": "react-native-background-upload",
+    "escapedName": "react-native-background-upload",
+    "rawSpec": "5.1.0",
+    "saveSpec": null,
+    "fetchSpec": "5.1.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/react-native-background-upload/-/react-native-background-upload-5.1.0.tgz",
+  "_spec": "5.1.0",
+  "_where": "/Users/duongtung/Remote-Working/FocalLab/WTV_UGC/wtv-ugc-app-new",
+  "author": {
+    "name": "Steve Potter"
+  },
+  "bugs": {
+    "url": "https://github.com/Vydia/react-native-background-upload/issues"
+  },
+  "description": "Cross platform http post file uploader with android and iOS background support",
+  "homepage": "https://github.com/Vydia/react-native-background-upload#readme",
+  "keywords": [
+    "NSURLSession",
+    "UploadService",
+    "background",
+    "upload",
+    "react-native"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "index.js",
+  "name": "react-native-background-upload",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.47.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vydia/react-native-background-upload.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "5.1.0"
+}
