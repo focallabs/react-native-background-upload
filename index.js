@@ -25,6 +25,27 @@ export type StartUploadArgs = {
   notification?: NotificationArgs
 }
 
+export type StartMultiPartUploadArgs = {
+  path: string,
+  method?: 'PUT' | 'POST',
+  // Optional, because raw is default
+  type?: 'raw' | 'multipart',
+  // This option is needed for multipart type
+  field?: string,
+  customUploadId?: string,
+  // parameters are supported only in multipart type
+  parameters?: { [string]: string },
+  headers?: Object,
+  notification?: NotificationArgs,
+  fileName: string,
+  getPresignUrl: string,
+  accessToken: string,
+  s3UploadId: string,
+  beginPart: Number,
+  totalPart: Number,
+  partSize: Number,
+}
+
 const NativeModule = NativeModules.VydiaRNFileUploader || NativeModules.RNFileUploader // iOS is VydiaRNFileUploader and Android is NativeModules 
 const eventPrefix = 'RNFileUploader-'
 
@@ -77,6 +98,8 @@ It is recommended to add listeners in the .then of this promise.
 */
 export const startUpload = (options: StartUploadArgs): Promise<string> => NativeModule.startUpload(options)
 
+export const startMultiPartUpload = (options: StartMultiPartUploadArgs): Promise<string> => NativeModule.startMultiPartUpload(options)
+
 /*
 Cancels active upload by string ID of the upload.
 
@@ -113,4 +136,4 @@ export const addListener = (eventType: UploadEvent, uploadId: string, listener: 
   })
 }
 
-export default { startUpload, cancelUpload, addListener, getFileInfo }
+export default { startUpload, cancelUpload, addListener, getFileInfo, startMultiPartUpload }
