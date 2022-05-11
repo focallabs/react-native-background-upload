@@ -39,5 +39,5 @@ repositories {
 }
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile 'com.github.gotev.android-upload-service:uploadservice:3.4.2'
+    compile 'com.github.gotev:android-upload-service:3.4.2'
 }
