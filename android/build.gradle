@@ -1,7 +1,9 @@
 buildscript {
     repositories {
-        jcenter()
+        google()
+        maven { url 'https://jitpack.io' }
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
     }
@@ -36,5 +38,5 @@ repositories {
 }
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile 'net.gotev:uploadservice-okhttp:3.4.2'
+    compile 'com.github.gotev.android-upload-service:uploadservice:3.4.2'
 }
