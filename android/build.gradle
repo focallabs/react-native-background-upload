@@ -1,9 +1,10 @@
 buildscript {
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath("com.android.tools.build:gradle:4.1.0")
     }
 }
 
@@ -33,8 +34,18 @@ android {
 
 repositories {
     mavenCentral()
+    maven { url "https://maven.google.com" }
+    maven { url "https://jitpack.io" }
 }
+
+def supportLibraryVersion = "27.0.2"
+
 dependencies {
     compile 'com.facebook.react:react-native:+'
-    compile 'net.gotev:uploadservice-okhttp:3.4.2'
+    implementation "androidx.annotation:annotation:1.1.0"
+    compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
+    compile "com.android.support:support-v4:${supportLibraryVersion}"
+    compile 'com.squareup.okhttp3:okhttp:3.9.1'
+//    compile 'net.gotev:uploadservice-okhttp:3.4.2'
+//    compile project(':uploadservice')
 }
