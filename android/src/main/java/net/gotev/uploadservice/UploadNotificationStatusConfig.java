@@ -4,6 +4,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import androidx.core.app.NotificationCompat;
@@ -66,7 +67,8 @@ public class UploadNotificationStatusConfig implements Parcelable {
 
     final PendingIntent getClickIntent(Context context) {
         if (clickIntent == null) {
-            return PendingIntent.getBroadcast(context, 0, new Intent(), PendingIntent.FLAG_UPDATE_CURRENT);
+            int flags = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ? PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE : PendingIntent.FLAG_UPDATE_CURRENT;
+            return PendingIntent.getBroadcast(context, 0, new Intent(), flags);
         }
 
         return clickIntent;
