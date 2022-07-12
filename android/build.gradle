@@ -2,7 +2,9 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
+
     dependencies {
         classpath("com.android.tools.build:gradle:4.1.0")
     }
@@ -46,6 +48,4 @@ dependencies {
     compile "com.android.support:appcompat-v7:${supportLibraryVersion}"
     compile "com.android.support:support-v4:${supportLibraryVersion}"
     compile 'com.squareup.okhttp3:okhttp:3.9.1'
-//    compile 'net.gotev:uploadservice-okhttp:3.4.2'
-//    compile project(':uploadservice')
 }
