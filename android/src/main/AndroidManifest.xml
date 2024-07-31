@@ -11,7 +11,8 @@
         <service
             android:name="net.gotev.uploadservice.UploadService"
             android:enabled="true"
-            android:exported="false" >
+            android:exported="false"
+            android:foregroundServiceType="dataSync">
         </service>
 
     </application>

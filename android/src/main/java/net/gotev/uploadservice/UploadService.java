@@ -1,5 +1,7 @@
 package net.gotev.uploadservice;
 
+import static android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_DATA_SYNC;
+
 import android.app.Notification;
 import android.app.Service;
 import android.content.Context;
@@ -385,7 +387,11 @@ public final class UploadService extends Service {
         }
 
         if (uploadId.equals(foregroundUploadId)) {
-            startForeground(UPLOAD_NOTIFICATION_BASE_ID, notification);
+            if (Build.VERSION.SDK_INT >= 33 && this.getApplicationInfo().targetSdkVersion >= 33) {
+                startForeground(UPLOAD_NOTIFICATION_BASE_ID, notification, FOREGROUND_SERVICE_TYPE_DATA_SYNC);
+            } else {
+                startForeground(UPLOAD_NOTIFICATION_BASE_ID, notification);
+            }
             return true;
         }
 
